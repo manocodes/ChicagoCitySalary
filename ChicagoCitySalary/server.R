@@ -31,7 +31,8 @@ shinyServer(function(input, output) {
         
                 if ( !is.null(agency()))
                 {
-                        CleanSalaryData = filter(CleanSalaryData, AgencyTitle == agency())
+                        CleanSalaryData = CleanSalaryData %>%
+                                filter(AgencyTitle == agency()) 
                 }else{
                         CleanSalaryData
                 }
